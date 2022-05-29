@@ -71,7 +71,7 @@ export default class MessageHandler {
         this.client.user.name ||
         this.client.user.vname ||
         this.client.user.short ||
-        "Asuna";
+        "Chitoge";
     } else if (M.WAMessage.key.fromMe) return void null;
 
     if (M.from.includes("status")) return void null;
@@ -146,30 +146,30 @@ export default class MessageHandler {
       return void null;
     if (!command)
       return void M.reply(
-        `Did you mean *${this.client.config.prefix}help*?`
+        `No such command, use *${this.client.config.prefix}help* to view the command list.`
       );
     const user = await this.client.getUser(M.sender.jid);
-    if (user.ban) return void M.reply("🟥 You're Banned from using commands.");
+    if (user.ban) return void M.reply("You're Banned from using commands.");
     const state = await this.client.DB.disabledcommands.findOne({
       command: command.config.command,
     });
     if (state)
       return void M.reply(
-        `✖ This command is disabled by *İşşa.*${
+        `✖ This command is disabled${
           state.reason ? ` for ${state.reason}` : ""
         }`
       );
     if (!command.config?.dm && M.chat === "dm")
-      return void M.reply("This command can ONLY be used in groups!");
+      return void M.reply("This command can only be used in groups");
     if (
       command.config?.modsOnly &&
       !this.client.config.mods?.includes(M.sender.jid)
     ) {
-      return void M.reply(`Only *İşşa* & his MODS are allowed to use this command.`);
+      return void M.reply(`baka!! Only *My kakashi chan✨ & his MODS* are allowed to use this command.`);
     }
     if (command.config?.adminOnly && !M.sender.isAdmin)
       return void M.reply(
-        `This command is only meant for the group admins, Baka!`
+        `This command is meant for *GROUP ADMINS* only!`
       );
     try {
       await command.run(M, this.parseArgs(args));
@@ -235,7 +235,7 @@ export default class MessageHandler {
         }
       );
       await this.client.sendMessage(Data.jids[p], buffer, MessageType.image, {
-        caption: `A Wild Pokemon Appeared! [Use ${this.client.config.prefix}catch <pokemon_name> to catch it!]`,
+        caption: `🎉A wild pokemon appeared! 🎉 Use ${this.client.config.prefix}catch to catch this pokemon.`,
       });
       setTimeout(async () => {
         await this.client.DB.group.updateOne(
@@ -283,8 +283,8 @@ export default class MessageHandler {
         },
       ];
       const buttonMessage: any = {
-        contentText: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n🌐 *Source: ${source[0].anime.title}*\n\n💰 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`,
-        footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+        contentText: `*A claimable character Appeared!*\n\n🌟 *Name: ${chara.name}*\n\n💬 *About:* ${chara.about}\n\n🧧 *Source: ${source[0].anime.title}*\n\n💰 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`,
+        footerText: "𝕝𝕖𝕧𝕚",
         buttons: buttons,
         headerType: 4,
         imageMessage: media?.message?.imageMessage,
@@ -304,18 +304,19 @@ export default class MessageHandler {
   };
 
   handleState = async (): Promise<void> => {
-    const text = `ASUNA RECONNECTED🚀`;
+    const text = `(💙ω💙) 𝙪𝙬𝙪 𝙍𝙚𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙🚀 𝙖𝙣𝙮𝙤𝙣𝙚 𝙢𝙞𝙨𝙨𝙚𝙙 𝙢𝙚 😏
+    `;
     await this.client.sendMessage(
-      "120363040300072277@g.us",
+      "120363025090167429@g.us",
       text,
       MessageType.text
     );
   };
 
   sendReconnectMessage = async (): Promise<void> => {
-    const text = `ASUNA RECONNECTED🚀`;
+    const text = `(💙ω💙) 𝙪𝙬𝙪 𝙍𝙚𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙🚀 𝙖𝙣𝙮𝙤𝙣𝙚 𝙢𝙞𝙨𝙨𝙚𝙙 𝙢𝙚 😏`;
     await this.client.sendMessage(
-      "120363040300072277@g.us",
+      "120363025090167429@g.us",
       text,
       MessageType.text
     );
