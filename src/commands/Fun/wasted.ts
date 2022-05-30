@@ -10,10 +10,10 @@ import { ISimplifiedMessage } from "../../typings";
 export default class Command extends BaseCommand {
 	constructor(client: WAClient, handler: MessageHandler) {
 		super(client, handler, {
-			command: "wanted",
-			description: "Well... make someone wanted",
+			command: "wasted",
+			description: "You just got wasted",
 			category: "fun",
-			usage: `${client.config.prefix}wanted [tag/quote]`,
+			usage: `${client.config.prefix}wasted [tag/quote]`,
 			baseXp: 30,
 		});
 	}
@@ -27,7 +27,7 @@ export default class Command extends BaseCommand {
 			? this.client.getProfilePicture(M.mentioned[0])
 			: this.client.getProfilePicture(M.quoted?.sender || M.sender.jid));
 		if (!image) return void M.reply(`Couldn't fetch the required Image`);
-		const result = await Canvacord.Canvacord.wanted(image);
+		const result = await Canvacord.Canvacord.wasted(image);
 		await M.reply(
 			result,
 			MessageType.image,

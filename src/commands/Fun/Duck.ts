@@ -55,8 +55,8 @@ export default class Command extends BaseCommand {
     const random = stickers[Math.floor(Math.random() * stickers.length)];
 
         const sticker: any = await new Sticker(random, {
-        pack: "𝙈𝙮𝙩𝙝𝙞𝙘🈲",
-	author: "İşşa☦︎",
+        pack: "Kakashi botz.inc 🦋🚀",
+	author: "ᴹᴿ᭄ ᴋᴀᴋᴀsʜɪོ ×፝֟͜×",
 	quality: 50,
 	type: "crop",
 	categories: ["🎊"],
