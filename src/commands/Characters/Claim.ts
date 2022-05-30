@@ -16,7 +16,7 @@ export default class Command extends BaseCommand {
   }
 
   run = async (M: ISimplifiedMessage): Promise<void> => {
-    const time = 10000;
+    const time = 45000;
     const cd = await (await this.client.getCd(M.sender.jid)).claim;
     if (time - (Date.now() - cd) > 0) {
       const timeLeft = ms(time - (Date.now() - cd));
@@ -56,7 +56,7 @@ export default class Command extends BaseCommand {
       { $set: { "charaResponse.claimable": false } }
     );
     return void M.reply(
-      `🎉 You have claimed *${data.name}* from *${data.source}*.`
+      `🎊 You have claimed *${data.name}* from *${data.source}*.`
     );
   };
 }
