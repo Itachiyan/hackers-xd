@@ -45,9 +45,9 @@ export default class Command extends BaseCommand {
       },
     ];
 
-    if (bank >= 10000000000)
+    if (bank >= 50000000000)
       return void M.reply(
-        `🟥 *You can't have more than 5000000 gold in your bank*.`
+        `🟥 *You can't have more than  50000000000 gold in your bank*.`
       );
     if (wallet < amount)
       return void M.reply(
@@ -55,8 +55,8 @@ export default class Command extends BaseCommand {
       );
     await this.client.deposit(user, amount);
     const buttonMessage: any = {
-      contentText: `🎉 You have transferred *${amount} gold* to your bank.`,
-      footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+      contentText: `🌟✨You have successfully transferred *${amount} gold* to your bank account 🎊🎉.`,
+      footerText: "🌟Levi 2022🌟",
       buttons: buttons,
       headerType: 1,
     };

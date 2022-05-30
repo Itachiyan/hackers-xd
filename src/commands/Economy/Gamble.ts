@@ -23,12 +23,12 @@ export default class Command extends BaseCommand {
     { joined }: IParsedArgs
   ): Promise<void> => {
     /*eslint-disable @typescript-eslint/no-explicit-any*/
-    if (M.from !== "120363040442532842@g.us")
+    if (M.from !== "120363025090167429@g.us")
       return void M.reply(
         `You can't gamble here. Use ${this.client.config.prefix}support to get casino group link.`
       );
     const user = M.sender.jid;
-    const time = 10000;
+    const time = 25000;
     const cd = await (await this.client.getCd(user)).gamble;
     if (time - (Date.now() - cd) > 0) {
       const timeLeft = ms(time - (Date.now() - cd));
@@ -68,8 +68,8 @@ export default class Command extends BaseCommand {
           amount - wallet
         } gold more to gamble with this amount of gold*.`
       );
-    if (amount > 20000)
-      return void M.reply(`🟥 *You can't gamble gold more than 20000.*`);
+    if (amount > 150000000000)
+      return void M.reply(`🟥 *You can't gamble gold more than 150000000000.*`);
     if (!directions.includes(luck))
       return void M.reply(
         `🟥 *The direction should be left or right. Example - ${this.client.config.prefix}gamble ${amount} left.*`
@@ -91,7 +91,7 @@ export default class Command extends BaseCommand {
       await M.reply(await sticker.build(), MessageType.sticker, Mimetype.webp);
       const buttonMessage: any = {
         contentText: `📉 You lost *${amount} gold*.`,
-        footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+        footerText: "levi",
         buttons: buttons,
         headerType: 1,
       };
@@ -114,7 +114,7 @@ export default class Command extends BaseCommand {
       await M.reply(await sticker.build(), MessageType.sticker, Mimetype.webp);
       const buttonMessage: any = {
         contentText: `📈 You won *${amount} gold*.`,
-        footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+        footerText: "levi",
         buttons: buttons,
         headerType: 1,
       };

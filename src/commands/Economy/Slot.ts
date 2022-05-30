@@ -21,12 +21,12 @@ export default class Command extends BaseCommand {
     M: ISimplifiedMessage,
     { joined }: IParsedArgs
   ): Promise<void> => {
-    if (M.from !== "120363040442532842@g.us")
+    if (M.from !== "120363025090167429@g.us")
       return void M.reply(
         `You can't bet here. Use ${this.client.config.prefix}support to get casino group link.`
       );
     const user = M.sender.jid;
-    const time = 5000;
+    const time = 25000;
     const cd = await (await this.client.getCd(user)).slot;
     if (time - (Date.now() - cd) > 0) {
       const timeLeft = ms(time - (Date.now() - cd));
@@ -85,12 +85,12 @@ export default class Command extends BaseCommand {
           amount - wallet
         } gold in your wallet to bet with this amount>*`
       );
-    if (amount > 20000)
-      return void M.reply(`🟥 *You can't bet more than 20000 gold*.`);
+    if (amount > 1500000000000)
+      return void M.reply(`😗 *You can't bet more than one  1500000000000 gold*.`);
     const head = `🎰 *SLOT MACHINE* 🎰`;
     const buttons = [
       {
-        buttonId: "wallet",
+        buttonId: `${this.client.config.prefix}wallet`,
         buttonText: { displayText: `${this.client.config.prefix}wallet` },
         type: 1,
       },
@@ -104,7 +104,7 @@ export default class Command extends BaseCommand {
       const text = `${head}\n\n${i}\n\n📉 You lost *${amount} gold*.`;
       const buttonMessage: any = {
         contentText: `${text}`,
-        footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+        footerText: "©zero two 2022",
         buttons: buttons,
         headerType: 1,
       };
@@ -118,17 +118,17 @@ export default class Command extends BaseCommand {
         { jid: user },
         { $set: { slot: Date.now() } }
       );
-      const text = `${head}\n\n${o}\n\n📈 You won *${gold} gold*.`;
+      const text = `${head}\n\n${o}\n\n🎊✨ You won *${gold} gold*.`;
       const buttonMessage: any = {
         contentText: `${text}`,
-        footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+        footerText: "©levi 2022",
         buttons: buttons,
         headerType: 1,
       };
       await M.reply(buttonMessage, MessageType.buttonsMessage);
     }
     if (z == "jackpot") {
-      const gold = amount * 50;
+      const gold = amount * 10;
       await this.client.addGold(user, gold);
       await this.client.DB.cd.updateOne(
         { jid: user },
@@ -137,7 +137,7 @@ export default class Command extends BaseCommand {
       const text = `${head}\n\n${p}\n\n🎊 *Jackpot!* You won *${gold} gold*.`;
       const buttonMessage: any = {
         contentText: `${text}`,
-        footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+        footerText: "©levi 2022",
         buttons: buttons,
         headerType: 1,
       };

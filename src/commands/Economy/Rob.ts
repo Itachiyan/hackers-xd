@@ -18,9 +18,9 @@ export default class Command extends BaseCommand {
   }
 
   run = async (M: ISimplifiedMessage): Promise<void> => {
-    if (M.from === "120363022488307199@g.us")
+    if (M.from === "120363025090167429@g.us")
       return void M.reply(`You can't rob someone here. Go somewhere else`);
-    const time = 900000;
+    const time = 5000;
     const cd = await (await this.client.getUser(M.sender.jid)).lastRob;
     if (time - (Date.now() - cd) > 0) {
       const timeLeft = ms(time - (Date.now() - cd));
@@ -44,7 +44,7 @@ export default class Command extends BaseCommand {
       "caught",
       "caught",
       "caught",
-      "caught",
+      "robbed",
       "caught",
     ];
     const wallet1 = await (await this.client.getUser(user)).wallet;
@@ -65,7 +65,9 @@ export default class Command extends BaseCommand {
       await this.client.reduceGold(user, gold);
       await this.client.addGold(target!, gold);
       return void M.reply(
-        `🟥 *You got caught and paid ${gold} gold to @${
+        `Congratulations *@${
+          M.sender.jid.split("@")[0]
+        }*, you got caught and paid *${gold} gold* to *@${
           target?.split("@")[0]
         }*`,
         MessageType.text,
@@ -77,7 +79,7 @@ export default class Command extends BaseCommand {
       await this.client.addGold(user, gold);
       await this.client.reduceGold(target!, gold);
       return void M.reply(
-        `You robbed *@${
+        `*@${M.sender.jid.split("@")[0]}* robbed *@${
           target?.split("@")[0]
         }* and got away with *${gold} gold!*`,
         MessageType.text,
