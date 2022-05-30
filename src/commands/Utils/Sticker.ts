@@ -12,7 +12,6 @@ export default class Command extends BaseCommand {
       aliases: ["s"],
       description: "Converts images/videos into stickers",
       category: "utils",
-      dm: true,
       usage: `${client.config.prefix}sticker [(as caption | tag)[video | image]]`,
       baseXp: 30,
     });
@@ -34,7 +33,7 @@ export default class Command extends BaseCommand {
       // return void M.reply(`*Gif/Video to Sticker* feature is currently unavailable.\nYou can still use Image to Sticker though!!`)
       buffer = await this.client.downloadMediaMessage(M.WAMessage);
     if (!buffer)
-      return void M.reply(`Do you want me to create stickers out of thin air?`);
+      return void M.reply(`You didn't provide any Image/Video to convert`);
 
     const getQuality = (): number => {
       const qualityFlag = parsedArgs.joined.match(/--(\d+)/g) || "";
@@ -87,8 +86,8 @@ export default class Command extends BaseCommand {
       })();
       return {
         categories,
-        pack: pack[1] || "𝙈𝙮𝙩𝙝𝙞𝙘🈲",
-        author: pack[2] || "İşşa☦",
+        pack: pack[1] || "𝙆𝙖𝙠𝙖𝙨𝙝𝙞 𝙗𝙤𝙩𝙯. 𝙄𝙣𝙘 🧣⚡",
+        author: pack[2] || "⏤͟͟͞͞⛦⍣⃝ꪶ͢ 𝐊𝐀𝐊𝐀𝐒𝐇𝐈⎈͢𝐁𝜣𝐓𝐙ꫂ 𝗫 💜 𝗠𝗿𝘀 𝗠𝗲𝗲𝗻𝘂 ❤",
         quality,
         type: StickerTypes[
           parsedArgs.flags.includes("--crop") ||
