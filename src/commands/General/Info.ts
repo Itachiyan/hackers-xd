@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
     };
     const uptime = () => formatTime(process.uptime());
     await M.reply(
-      `*━━━❰ 𝖠𝗌𝗎𝗇𝖺 𝖡𝗈𝗍𝗍𝗈🚀 ❱━━━*\n\n 🚡 *Groups: ${
+      `*━━━❰ 𝙇𝙚𝙫𝙞 𝖡𝗈𝗍𝗍𝗈🚀 ❱━━━*\n\n 🚡 *Groups: ${
         chats.length
       }*\n\n👥 *Users: ${users}*\n\n🟥 *Banned Users: ${uban}*\n\n🚦 *Uptime: ${uptime()}*\n\n🌋 *Company: Sapphire🈲*`
     );
