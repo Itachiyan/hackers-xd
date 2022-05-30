@@ -46,12 +46,12 @@ export default class Command extends BaseCommand {
         ? this.client.contacts[users.jid].short
         : `@${users.jid.split("@")[0]}`;
 
-      let text = `_*ASUNA BOTTO🚀*\n *#${i}*\n*🏮USER : ${username}*\n*🎉Experience*: ${users.Xp}\n*🏦BANK* : ${users.bank}\n*🪙GOLD* : ${users.wallet}\n`;
+      let text = `_*LEVI BOTTO🚀*\n *#${i}*\n*🏮USER : ${username}*\n*🎉Experience*: ${users.Xp}\n*🏦BANK* : ${users.bank}\n*🪙GOLD* : ${users.wallet}\n`;
       message.push(text);
     }
     console.log(message);
     M.reply(
-      await request.buffer("https://www.linkpicture.com/q/Asunabotto.jpg"),
+      await request.buffer("https://telegra.ph/file/32b47153b628ccbae821a.jpg"),
       MessageType.image,
       undefined,
       mention,
