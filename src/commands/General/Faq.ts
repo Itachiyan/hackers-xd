@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
   constructor(client: WAClient, handler: MessageHandler) {
     super(client, handler, {
       command: "faq",
-      description: "shows the faq of asuna",
+      description: "shows the faq of 𝙡𝙚𝙫𝙞",
       category: "general",
       usage: `${client.config.prefix}rules`,
       baseXp: 0,
@@ -29,7 +29,7 @@ export default class Command extends BaseCommand {
     const buttonMessage: any = {
       contentText: `*━━━❰ FAQ ❱━━━*
 
-📮 *Q1:* How do I add Asuna bot in my group?
+📮 *Q1:* How do I add levi bot in my group?
 📑 *A:* Send the group link in the bot's or owner's DM & it will join soon.
 ᚖ ────── ✪ ────── ᚖ
 
@@ -49,11 +49,11 @@ export default class Command extends BaseCommand {
 📑 *A:* Calling the bot is at your own pleasure but with consequences thus you will be blocked & banned instantly for calling the bot!
 ᚖ ────── ✪ ────── ᚖ
 
-📮 *Q6:* Where can I find Asuna bot?
-📑 *A:* Asuna is one of the bots owned by *Sapphire🈲* group. Incase you need other bots, use the command ${this.client.config.prefix}support & you will get support group link in your DM.
+📮 *Q6:* Where can I find levi bot?
+📑 *A:* Levi is one of the bots owned by *kakashi botz. inc* group. Incase you need other bots, use the command ${this.client.config.prefix}support & you will get support group link in your DM.
 ᚖ ────── ✪ ────── ᚖ
 
-📮 *Q7:* Can you hire a bot from *Sapphire🈲?*
+📮 *Q7:* Can you hire a bot from *kakashi botz. inc*
 📑 *A:* Based on the copyrights, we don't hire bots to anyone thus the bots are free to use.
 ᚖ ────── ✪ ────── ᚖ
 
@@ -61,14 +61,14 @@ export default class Command extends BaseCommand {
 📑 *A:* There are 3 main reasons for that, either the bot is lagging due to data traffic, inactive or the bot has been banned.
 ᚖ ────── ✪ ────── ᚖ
 
-📮 *Q9:* How can I create a bot like Asuna?
-📑 *A:* You can't deploy a version of Asuna thus it's not an open source project.
+📮 *Q9:* How can I create a bot like levi?
+📑 *A:* You can't deploy a version of Levi thus it's not an open source project.
 ᚖ ────── ✪ ────── ᚖ
 
-📮 *Q10:* Is the project or the *Sapphire🈲* group sponsored?
+📮 *Q10:* Is the project or the *kakashi botz. inc* group sponsored?
 📑 *A:* Of course not, we're not sponsored either way but it could be your own pleasure to do that thus this is a non-profit organization.
 ᚖ ────── ✪ ────── ᚖ`,
-      footerText: "© 𝖠𝗌𝗎𝗇𝖺 2022",
+      footerText: "© 𝙇𝙚𝙫𝙞 2022",
       buttons: buttons,
       headerType: 1,
     };
